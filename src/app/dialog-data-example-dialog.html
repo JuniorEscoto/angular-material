@@ -1,0 +1,99 @@
+
+<mat-dialog-content>
+<h2 mat-dialog-title><mat-toolbar color="primary">
+    <span>TimeLine Setting</span>
+</mat-toolbar></h2>
+	<mat-checkbox>Custom Range</mat-checkbox> 
+
+
+
+<!-- /***********************  CARD AND DATAPICKER ****************************************/ -->
+
+<mat-card class="hola"> 
+  <mat-card-content >
+
+  	<mat-form-field>
+  		<input matInput [matDatepicker]="picker" placeholder="Choose a date">
+  		<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  		<mat-datepicker #picker></mat-datepicker>
+	</mat-form-field>
+
+		<mat-form-field>
+  		<input matInput [matDatepicker]="picker2" placeholder="Choose a date">
+  		<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+  		<mat-datepicker #picker2></mat-datepicker>
+	</mat-form-field>
+  	
+  </mat-card-content>
+</mat-card>
+
+<!-- /*********************** END CARD AND DATAPICKER ***************************************/ -->
+
+	
+</mat-dialog-content>
+
+<!-- /***********************  TIME RANGE ***************************************************/ -->
+
+<mat-form-field>
+  <mat-select placeholder="TimeRange">
+    
+    <mat-option *ngFor="let time of TimeRange" [value]="time">{{time}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- /***********************  END TIME RANGE************************************************/ -->
+
+
+
+
+
+<!-- /***********************  INTERVAL *****************************************************/ -->
+
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style" placeholder="interval">  
+  <mat-button-toggle value="bold">Day</mat-button-toggle>
+  <mat-button-toggle value="italic">Week</mat-button-toggle>
+  <mat-button-toggle value="underline">Month</mat-button-toggle>
+   <mat-button-toggle value="underline">Quarter</mat-button-toggle>
+    <mat-button-toggle value="underline">Year</mat-button-toggle>
+     <mat-button-toggle value="underline">Ytd</mat-button-toggle>
+</mat-button-toggle-group>
+
+<!-- /***********************  END INTERVAL **************************************************/ -->
+
+<!-- /***********************  YEAR COMPARE AND MONTH COMPARE CHECKBOK**************************/ -->
+
+<mat-checkbox>Year Compare</mat-checkbox> 
+<mat-checkbox>Month Compare</mat-checkbox> 
+
+<!-- /*********************** END YEAR COMPARE AND MONTH COMPARE CHECKBOK***********************/ -->
+
+
+<!-- /***********************  YEAR COMPARE AND MONTH COMPARE ***********************************/ -->
+<mat-form-field>
+  <mat-select placeholder="Year Compare">
+    
+    <mat-option *ngFor="let time of TimeRange" [value]="time">{{time}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-select placeholder="Month Compare">
+    
+    <mat-option *ngFor="let time of TimeRange" [value]="time">{{time}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- /***********************  END YEAR COMPARE AND MONTH COMPARE ******************************/ -->
+
+
+<button mat-raised-button color="primary">Apply</button>
+
+<mat-dialog-actions>
+  
+ <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button mat-button [mat-dialog-close]="true">Cancel</button>
+</mat-dialog-actions>
+
+
+
+
